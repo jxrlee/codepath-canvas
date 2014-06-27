@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A4720B8195DD97E00AD5779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720B7195DD97E00AD5779 /* Foundation.framework */; };
+		7A4720BA195DD97E00AD5779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720B9195DD97E00AD5779 /* CoreGraphics.framework */; };
+		7A4720BC195DD97E00AD5779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720BB195DD97E00AD5779 /* UIKit.framework */; };
+		7A4720C2195DD97E00AD5779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4720C0195DD97E00AD5779 /* InfoPlist.strings */; };
+		7A4720C4195DD97E00AD5779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4720C3195DD97E00AD5779 /* main.m */; };
+		7A4720C8195DD97E00AD5779 /* JLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4720C7195DD97E00AD5779 /* JLAppDelegate.m */; };
+		7A4720CA195DD97E00AD5779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4720C9195DD97E00AD5779 /* Images.xcassets */; };
+		7A4720D1195DD97E00AD5779 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720D0195DD97E00AD5779 /* XCTest.framework */; };
+		7A4720D2195DD97E00AD5779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720B7195DD97E00AD5779 /* Foundation.framework */; };
+		7A4720D3195DD97E00AD5779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4720BB195DD97E00AD5779 /* UIKit.framework */; };
+		7A4720DB195DD97E00AD5779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4720D9195DD97E00AD5779 /* InfoPlist.strings */; };
+		7A4720DD195DD97E00AD5779 /* canvasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4720DC195DD97E00AD5779 /* canvasTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A4720D4195DD97E00AD5779 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4720AC195DD97E00AD5779 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A4720B3195DD97E00AD5779;
+			remoteInfo = canvas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A4720B4195DD97E00AD5779 /* canvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4720B7195DD97E00AD5779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7A4720B9195DD97E00AD5779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7A4720BB195DD97E00AD5779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7A4720BF195DD97E00AD5779 /* canvas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "canvas-Info.plist"; sourceTree = "<group>"; };
+		7A4720C1195DD97E00AD5779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A4720C3195DD97E00AD5779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A4720C5195DD97E00AD5779 /* canvas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "canvas-Prefix.pch"; sourceTree = "<group>"; };
+		7A4720C6195DD97E00AD5779 /* JLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAppDelegate.h; sourceTree = "<group>"; };
+		7A4720C7195DD97E00AD5779 /* JLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAppDelegate.m; sourceTree = "<group>"; };
+		7A4720C9195DD97E00AD5779 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7A4720CF195DD97E00AD5779 /* canvasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = canvasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4720D0195DD97E00AD5779 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7A4720D8195DD97E00AD5779 /* canvasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "canvasTests-Info.plist"; sourceTree = "<group>"; };
+		7A4720DA195DD97E00AD5779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A4720DC195DD97E00AD5779 /* canvasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = canvasTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A4720B1195DD97E00AD5779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720BA195DD97E00AD5779 /* CoreGraphics.framework in Frameworks */,
+				7A4720BC195DD97E00AD5779 /* UIKit.framework in Frameworks */,
+				7A4720B8195DD97E00AD5779 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A4720CC195DD97E00AD5779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720D1195DD97E00AD5779 /* XCTest.framework in Frameworks */,
+				7A4720D3195DD97E00AD5779 /* UIKit.framework in Frameworks */,
+				7A4720D2195DD97E00AD5779 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A4720AB195DD97E00AD5779 = {
+			isa = PBXGroup;
+			children = (
+				7A4720BD195DD97E00AD5779 /* canvas */,
+				7A4720D6195DD97E00AD5779 /* canvasTests */,
+				7A4720B6195DD97E00AD5779 /* Frameworks */,
+				7A4720B5195DD97E00AD5779 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A4720B5195DD97E00AD5779 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720B4195DD97E00AD5779 /* canvas.app */,
+				7A4720CF195DD97E00AD5779 /* canvasTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A4720B6195DD97E00AD5779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720B7195DD97E00AD5779 /* Foundation.framework */,
+				7A4720B9195DD97E00AD5779 /* CoreGraphics.framework */,
+				7A4720BB195DD97E00AD5779 /* UIKit.framework */,
+				7A4720D0195DD97E00AD5779 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A4720BD195DD97E00AD5779 /* canvas */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720C6195DD97E00AD5779 /* JLAppDelegate.h */,
+				7A4720C7195DD97E00AD5779 /* JLAppDelegate.m */,
+				7A4720C9195DD97E00AD5779 /* Images.xcassets */,
+				7A4720BE195DD97E00AD5779 /* Supporting Files */,
+			);
+			path = canvas;
+			sourceTree = "<group>";
+		};
+		7A4720BE195DD97E00AD5779 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720BF195DD97E00AD5779 /* canvas-Info.plist */,
+				7A4720C0195DD97E00AD5779 /* InfoPlist.strings */,
+				7A4720C3195DD97E00AD5779 /* main.m */,
+				7A4720C5195DD97E00AD5779 /* canvas-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A4720D6195DD97E00AD5779 /* canvasTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720DC195DD97E00AD5779 /* canvasTests.m */,
+				7A4720D7195DD97E00AD5779 /* Supporting Files */,
+			);
+			path = canvasTests;
+			sourceTree = "<group>";
+		};
+		7A4720D7195DD97E00AD5779 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A4720D8195DD97E00AD5779 /* canvasTests-Info.plist */,
+				7A4720D9195DD97E00AD5779 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A4720B3195DD97E00AD5779 /* canvas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A4720E0195DD97E00AD5779 /* Build configuration list for PBXNativeTarget "canvas" */;
+			buildPhases = (
+				7A4720B0195DD97E00AD5779 /* Sources */,
+				7A4720B1195DD97E00AD5779 /* Frameworks */,
+				7A4720B2195DD97E00AD5779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = canvas;
+			productName = canvas;
+			productReference = 7A4720B4195DD97E00AD5779 /* canvas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A4720CE195DD97E00AD5779 /* canvasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A4720E3195DD97E00AD5779 /* Build configuration list for PBXNativeTarget "canvasTests" */;
+			buildPhases = (
+				7A4720CB195DD97E00AD5779 /* Sources */,
+				7A4720CC195DD97E00AD5779 /* Frameworks */,
+				7A4720CD195DD97E00AD5779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A4720D5195DD97E00AD5779 /* PBXTargetDependency */,
+			);
+			name = canvasTests;
+			productName = canvasTests;
+			productReference = 7A4720CF195DD97E00AD5779 /* canvasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A4720AC195DD97E00AD5779 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = mn8;
+				TargetAttributes = {
+					7A4720CE195DD97E00AD5779 = {
+						TestTargetID = 7A4720B3195DD97E00AD5779;
+					};
+				};
+			};
+			buildConfigurationList = 7A4720AF195DD97E00AD5779 /* Build configuration list for PBXProject "canvas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7A4720AB195DD97E00AD5779;
+			productRefGroup = 7A4720B5195DD97E00AD5779 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A4720B3195DD97E00AD5779 /* canvas */,
+				7A4720CE195DD97E00AD5779 /* canvasTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A4720B2195DD97E00AD5779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720C2195DD97E00AD5779 /* InfoPlist.strings in Resources */,
+				7A4720CA195DD97E00AD5779 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A4720CD195DD97E00AD5779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720DB195DD97E00AD5779 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A4720B0195DD97E00AD5779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720C8195DD97E00AD5779 /* JLAppDelegate.m in Sources */,
+				7A4720C4195DD97E00AD5779 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A4720CB195DD97E00AD5779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4720DD195DD97E00AD5779 /* canvasTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A4720D5195DD97E00AD5779 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A4720B3195DD97E00AD5779 /* canvas */;
+			targetProxy = 7A4720D4195DD97E00AD5779 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A4720C0195DD97E00AD5779 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A4720C1195DD97E00AD5779 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7A4720D9195DD97E00AD5779 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A4720DA195DD97E00AD5779 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A4720DE195DD97E00AD5779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7A4720DF195DD97E00AD5779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A4720E1195DD97E00AD5779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "canvas/canvas-Prefix.pch";
+				INFOPLIST_FILE = "canvas/canvas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7A4720E2195DD97E00AD5779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "canvas/canvas-Prefix.pch";
+				INFOPLIST_FILE = "canvas/canvas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7A4720E4195DD97E00AD5779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/canvas.app/canvas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "canvas/canvas-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "canvasTests/canvasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7A4720E5195DD97E00AD5779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/canvas.app/canvas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "canvas/canvas-Prefix.pch";
+				INFOPLIST_FILE = "canvasTests/canvasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A4720AF195DD97E00AD5779 /* Build configuration list for PBXProject "canvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A4720DE195DD97E00AD5779 /* Debug */,
+				7A4720DF195DD97E00AD5779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A4720E0195DD97E00AD5779 /* Build configuration list for PBXNativeTarget "canvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A4720E1195DD97E00AD5779 /* Debug */,
+				7A4720E2195DD97E00AD5779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7A4720E3195DD97E00AD5779 /* Build configuration list for PBXNativeTarget "canvasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A4720E4195DD97E00AD5779 /* Debug */,
+				7A4720E5195DD97E00AD5779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A4720AC195DD97E00AD5779 /* Project object */;
+}
