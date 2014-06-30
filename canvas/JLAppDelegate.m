@@ -7,6 +7,7 @@
 //
 
 #import "JLAppDelegate.h"
+#import "CanvasViewController.h"
 
 @implementation JLAppDelegate
 
@@ -14,6 +15,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    CanvasViewController *vc = [[CanvasViewController alloc] init];
+    self.window.rootViewController = vc;
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
