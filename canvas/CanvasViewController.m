@@ -11,7 +11,16 @@
 @interface CanvasViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *trayContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *chromeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *gmailImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *spotifyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *twitterImageView;
+@property (nonatomic) UIImageView *tempImageView;
 
+- (IBAction)onChrome:(UIPanGestureRecognizer *)sender;
+- (IBAction)onGmail:(UIPanGestureRecognizer *)sender;
+- (IBAction)onSpotify:(UIPanGestureRecognizer *)sender;
+- (IBAction)onTwitter:(UIPanGestureRecognizer *)sender;
 
 @end
 
@@ -138,6 +147,51 @@ float lastVal;
         } else {
             self.trayContainerView.center = CGPointMake(self.trayContainerView.center.x, self.trayContainerView.center.y - diff);
         }
+    }
+    
+}
+
+- (IBAction)onChrome:(UIPanGestureRecognizer *)sender {
+}
+
+- (IBAction)onGmail:(UIPanGestureRecognizer *)sender {
+}
+
+- (IBAction)onSpotify:(UIPanGestureRecognizer *)sender {
+}
+
+- (IBAction)onTwitter:(UIPanGestureRecognizer *)sender {
+    
+    // get touch location
+    CGPoint touchPosition = [sender locationInView:self.view];
+    
+    //NSLog(@"%f",touchPosition.y);
+    
+    
+    if(sender.state == UIGestureRecognizerStateBegan) {
+        
+        //NSLog(@"twitter begin");
+        //lastVal = touchPosition.y;
+        //NSLog(@"lastVal: %f",lastVal);
+        
+        // create copy of image
+        CGRect frame = CGRectMake(self.twitterImageView.frame.origin.x, self.twitterImageView.frame.origin.y, 44, 44);
+        self.tempImageView = [[UIImageView alloc] initWithFrame:frame];
+        self.tempImageView.image = self.twitterImageView.image;
+        
+        [self.view addSubview:self.tempImageView];
+        
+        
+    } else if(sender.state == UIGestureRecognizerStateChanged) {
+        
+        // move image to touch location
+        self.tempImageView.center = CGPointMake(touchPosition.x, touchPosition.y);
+        
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // remove image if not above tray area
+        
     }
     
 }

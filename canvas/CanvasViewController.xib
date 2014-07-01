@@ -6,7 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CanvasViewController">
             <connections>
+                <outlet property="chromeImageView" destination="hVR-Kh-TUo" id="0f8-1R-xUM"/>
+                <outlet property="gmailImageView" destination="2yu-go-pfw" id="JDu-zf-wbP"/>
+                <outlet property="spotifyImageView" destination="4Cn-4b-CVO" id="fIX-Og-Sae"/>
                 <outlet property="trayContainerView" destination="Bfh-Am-2QB" id="v8M-dB-9Ak"/>
+                <outlet property="twitterImageView" destination="Qz2-Dg-c8b" id="Zma-Xw-z10"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,18 +30,34 @@
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="chrome" id="hVR-Kh-TUo">
                                     <rect key="frame" x="20" y="8" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Vcc-1x-myo" appends="YES" id="4Ef-iJ-AFI"/>
+                                    </connections>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="gmail" id="2yu-go-pfw">
                                     <rect key="frame" x="96" y="8" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="SdP-23-4JB" appends="YES" id="Jkf-Kw-Mec"/>
+                                    </connections>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="spotify" id="4Cn-4b-CVO">
                                     <rect key="frame" x="180" y="8" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="cN7-xK-p28" appends="YES" id="gTa-uW-rcr"/>
+                                    </connections>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="twitter" id="Qz2-Dg-c8b">
                                     <rect key="frame" x="256" y="8" width="44" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="AnM-hP-EMh" appends="YES" id="g2l-Zu-wtW"/>
+                                    </connections>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,6 +77,26 @@
         <panGestureRecognizer minimumNumberOfTouches="1" id="1Di-33-jEx">
             <connections>
                 <action selector="onTrayContainerDrag:" destination="-1" id="N8j-9f-s9y"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="AnM-hP-EMh">
+            <connections>
+                <action selector="onTwitter:" destination="-1" id="15D-sd-jA1"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="cN7-xK-p28">
+            <connections>
+                <action selector="onSpotify:" destination="-1" id="7tB-uF-yXp"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="SdP-23-4JB">
+            <connections>
+                <action selector="onGmail:" destination="-1" id="f40-hL-Tia"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="Vcc-1x-myo">
+            <connections>
+                <action selector="onChrome:" destination="-1" id="FBh-16-P96"/>
             </connections>
         </panGestureRecognizer>
     </objects>
