@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CanvasViewController : UIViewController
+@interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

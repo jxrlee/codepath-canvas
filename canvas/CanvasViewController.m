@@ -59,6 +59,7 @@ float lastVal;
     hiddenTrayCenter = self.trayContainerView.center.y;
     //NSLog(@"center y: %f", self.trayContainerView.center.y);
     // 523 - 583
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -195,6 +196,8 @@ float lastVal;
         UIPinchGestureRecognizer *imagePinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePinch:)];
         UIRotationGestureRecognizer *imageRotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(onImageRotation:)];
         
+        imagePinch.delegate = self;
+        
         [self.tempImageView addGestureRecognizer:imagePan];
         [self.tempImageView addGestureRecognizer:imagePinch];
         [self.tempImageView addGestureRecognizer:imageRotate];
@@ -248,6 +251,10 @@ float lastVal;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
     sender.view.transform = CGAffineTransformRotate(scaleTransform, rotation);
     
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 
 @end
