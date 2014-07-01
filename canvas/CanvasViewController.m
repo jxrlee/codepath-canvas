@@ -11,6 +11,7 @@
 @interface CanvasViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *trayContainerView;
+@property (weak, nonatomic) IBOutlet UIView *trayView;
 @property (weak, nonatomic) IBOutlet UIImageView *chromeImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *gmailImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *spotifyImageView;
@@ -175,10 +176,15 @@ float lastVal;
         //NSLog(@"lastVal: %f",lastVal);
         
         // create copy of image
-        CGRect frame = CGRectMake(self.twitterImageView.frame.origin.x, self.twitterImageView.frame.origin.y, 44, 44);
+        float posY = self.trayContainerView.frame.origin.y + self.trayView.frame.origin.y + self.twitterImageView.frame.origin.y;
+        CGRect frame = CGRectMake(self.twitterImageView.frame.origin.x, posY, 44, 44);
         self.tempImageView = [[UIImageView alloc] initWithFrame:frame];
         self.tempImageView.image = self.twitterImageView.image;
+        self.tempImageView.userInteractionEnabled = YES;
         
+        UIPanGestureRecognizer *imagePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePan:)];
+        
+        [self.tempImageView addGestureRecognizer:imagePan];
         [self.view addSubview:self.tempImageView];
         
         
@@ -194,6 +200,24 @@ float lastVal;
         
     }
     
+}
+
+
+- (void)onImagePan:(UIPanGestureRecognizer *)pan {
+    NSLog(@"panning");
+    
+    CGPoint translation = [pan translationInView:self.view];
+    
+    if(pan.state == UIGestureRecognizerStateChanged) {
+        //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
+        
+        pan.view.center = CGPointMake(pan.view.center.x + translation.x, pan.view.center.y + translation.y);
+        [pan setTranslation:CGPointMake(0, 0) inView:self.view];
+        
+    } if (pan.state == UIGestureRecognizerStateEnded) {
+        //UIImageView *view;
+        
+    }
 }
 
 @end

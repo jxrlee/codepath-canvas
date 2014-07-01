@@ -10,6 +10,7 @@
                 <outlet property="gmailImageView" destination="2yu-go-pfw" id="JDu-zf-wbP"/>
                 <outlet property="spotifyImageView" destination="4Cn-4b-CVO" id="fIX-Og-Sae"/>
                 <outlet property="trayContainerView" destination="Bfh-Am-2QB" id="v8M-dB-9Ak"/>
+                <outlet property="trayView" destination="iZb-FY-L6h" id="CVy-Ve-VYD"/>
                 <outlet property="twitterImageView" destination="Qz2-Dg-c8b" id="Zma-Xw-z10"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
