@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *gmailImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *spotifyImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImageView;
-@property (nonatomic) UIImageView *tempImageView;
+@property (strong, nonatomic) UIImageView *tempImageView;
+@property (assign, nonatomic) CGFloat scale;
+@property (assign, nonatomic) CGFloat rotate;
 
 - (IBAction)onChrome:(UIPanGestureRecognizer *)sender;
 - (IBAction)onGmail:(UIPanGestureRecognizer *)sender;
@@ -75,13 +77,13 @@ float lastVal;
     
     if(sender.state == UIGestureRecognizerStateBegan) {
         
-        NSLog(@"gesture begin");
+        //NSLog(@"gesture begin");
         lastVal = touchPosition.y;
-        NSLog(@"lastVal: %f",lastVal);
+        //NSLog(@"lastVal: %f",lastVal);
         
     } else if (sender.state == UIGestureRecognizerStateChanged) {
         
-        NSLog(@"%f  -> %f", lastVal, touchPosition.y);
+        //NSLog(@"%f  -> %f", lastVal, touchPosition.y);
         float diff = lastVal - touchPosition.y;
         
         // move tray up
@@ -105,26 +107,32 @@ float lastVal;
         
         // snap to revealed or hidden
         float half = (revealedTrayCenter + hiddenTrayCenter)/2;
-        if(self.trayContainerView.center.y < half) {
+
+        
+        
+        
+        [UIView animateWithDuration:.2 animations:^{
             
-            [UIView animateWithDuration:.2 animations:^{
+            if(self.trayContainerView.center.y < half) {
+                
                 self.trayContainerView.center = CGPointMake(self.trayContainerView.center.x, revealedTrayCenter);
-            }];
-            
-        } else {
-            
-            [UIView animateWithDuration:.2 animations:^{
+                self.trayContainerView.backgroundColor = [UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1.0f];
+                
+            } else {
+                
                 self.trayContainerView.center = CGPointMake(self.trayContainerView.center.x, hiddenTrayCenter);
-            }];
+                self.trayContainerView.backgroundColor = [UIColor colorWithRed:3/255.0f green:169/255.0f blue:244/255.0f alpha:1.0f];
+                
+            }
             
-        }
+        }];
     }
     
 }
 
 - (void)moveTrayUp:(float)diff {
     
-    NSLog(@"Move tray up");
+    //NSLog(@"Move tray up");
     
     if(self.trayContainerView.center.y > revealedTrayCenter) {
         
@@ -140,7 +148,7 @@ float lastVal;
 
 - (void)moveTrayDown:(float)diff {
     
-    NSLog(@"Move tray down");
+    //NSLog(@"Move tray down");
     
     if(self.trayContainerView.center.y < hiddenTrayCenter) {
         if(self.trayContainerView.center.y - diff < revealedTrayCenter) {
@@ -182,9 +190,14 @@ float lastVal;
         self.tempImageView.image = self.twitterImageView.image;
         self.tempImageView.userInteractionEnabled = YES;
         
+        // add gestures
         UIPanGestureRecognizer *imagePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePan:)];
+        UIPinchGestureRecognizer *imagePinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePinch:)];
+        UIRotationGestureRecognizer *imageRotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(onImageRotation:)];
         
         [self.tempImageView addGestureRecognizer:imagePan];
+        [self.tempImageView addGestureRecognizer:imagePinch];
+        [self.tempImageView addGestureRecognizer:imageRotate];
         [self.view addSubview:self.tempImageView];
         
         
@@ -197,27 +210,44 @@ float lastVal;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         // remove image if not above tray area
+
         
     }
     
 }
 
 
-- (void)onImagePan:(UIPanGestureRecognizer *)pan {
+- (void)onImagePan:(UIPanGestureRecognizer *)sender {
     NSLog(@"panning");
     
-    CGPoint translation = [pan translationInView:self.view];
+    CGPoint translation = [sender translationInView:self.view];
     
-    if(pan.state == UIGestureRecognizerStateChanged) {
-        //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
+    sender.view.center = CGPointMake(sender.view.center.x + translation.x, sender.view.center.y + translation.y);
+    [sender setTranslation:CGPointMake(0, 0) inView:self.view];
         
-        pan.view.center = CGPointMake(pan.view.center.x + translation.x, pan.view.center.y + translation.y);
-        [pan setTranslation:CGPointMake(0, 0) inView:self.view];
-        
-    } if (pan.state == UIGestureRecognizerStateEnded) {
-        //UIImageView *view;
-        
-    }
+}
+
+- (void)onImagePinch:(UIPinchGestureRecognizer *)sender {
+    NSLog(@"pinching");
+    
+    // new scale
+    CGFloat scale = sender.scale;
+    self.scale = scale;
+    
+    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(self.rotate);
+    sender.view.transform = CGAffineTransformScale(rotateTransform, scale, scale);
+}
+
+- (void)onImageRotation:(UIRotationGestureRecognizer *)sender {
+    NSLog(@"rotating");
+    
+    // new rotation
+    CGFloat rotation = sender.rotation;
+    self.rotate = rotation;
+    
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
+    sender.view.transform = CGAffineTransformRotate(scaleTransform, rotation);
+    
 }
 
 @end
