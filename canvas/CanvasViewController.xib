@@ -16,11 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="Bfh-Am-2QB">
-                    <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                    <rect key="frame" x="0.0" y="478" width="320" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="iZb-FY-L6h">
-                            <rect key="frame" x="0.0" y="4" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="30" width="320" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="chrome" id="hVR-Kh-TUo">
@@ -44,12 +44,21 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1Di-33-jEx" appends="YES" id="qD7-iP-ST6"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="1Di-33-jEx">
+            <connections>
+                <action selector="onTrayContainerDrag:" destination="-1" id="N8j-9f-s9y"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="chrome" width="256" height="256"/>
