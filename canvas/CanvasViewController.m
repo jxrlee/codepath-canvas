@@ -108,11 +108,9 @@ float lastVal;
         
         // snap to revealed or hidden
         float half = (revealedTrayCenter + hiddenTrayCenter)/2;
-
         
         
-        
-        [UIView animateWithDuration:.2 animations:^{
+        [UIView animateWithDuration:.2 delay:0 usingSpringWithDamping:2 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseIn animations:^{
             
             if(self.trayContainerView.center.y < half) {
                 
@@ -126,7 +124,9 @@ float lastVal;
                 
             }
             
-        }];
+        } completion:nil
+            
+        ];
     }
     
 }
@@ -162,12 +162,135 @@ float lastVal;
 }
 
 - (IBAction)onChrome:(UIPanGestureRecognizer *)sender {
+    
+    // get touch location
+    CGPoint touchPosition = [sender locationInView:self.view];
+    
+    if(sender.state == UIGestureRecognizerStateBegan) {
+        
+        // create copy of image
+        float posY = self.trayContainerView.frame.origin.y + self.trayView.frame.origin.y + self.chromeImageView.frame.origin.y;
+        CGRect frame = CGRectMake(self.chromeImageView.frame.origin.x, posY, 44, 44);
+        self.tempImageView = [[UIImageView alloc] initWithFrame:frame];
+        self.tempImageView.image = self.chromeImageView.image;
+        self.tempImageView.userInteractionEnabled = YES;
+        
+        // add gestures
+        UIPanGestureRecognizer *imagePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePan:)];
+        UIPinchGestureRecognizer *imagePinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePinch:)];
+        UIRotationGestureRecognizer *imageRotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(onImageRotation:)];
+        
+        imagePinch.delegate = self;
+        
+        [self.tempImageView addGestureRecognizer:imagePan];
+        [self.tempImageView addGestureRecognizer:imagePinch];
+        [self.tempImageView addGestureRecognizer:imageRotate];
+        [self.view addSubview:self.tempImageView];
+        
+        
+    } else if(sender.state == UIGestureRecognizerStateChanged) {
+        
+        // move image to touch location
+        self.tempImageView.center = CGPointMake(touchPosition.x, touchPosition.y);
+        
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // remove image if not above tray area
+        if(touchPosition.y > self.view.frame.size.height - self.trayContainerView.frame.size.height) {
+            [self.tempImageView removeFromSuperview];
+        }
+        
+    }
+    
 }
 
 - (IBAction)onGmail:(UIPanGestureRecognizer *)sender {
+    
+    // get touch location
+    CGPoint touchPosition = [sender locationInView:self.view];
+    
+    if(sender.state == UIGestureRecognizerStateBegan) {
+        
+        // create copy of image
+        float posY = self.trayContainerView.frame.origin.y + self.trayView.frame.origin.y + self.gmailImageView.frame.origin.y;
+        CGRect frame = CGRectMake(self.gmailImageView.frame.origin.x, posY, 44, 44);
+        self.tempImageView = [[UIImageView alloc] initWithFrame:frame];
+        self.tempImageView.image = self.gmailImageView.image;
+        self.tempImageView.userInteractionEnabled = YES;
+        
+        // add gestures
+        UIPanGestureRecognizer *imagePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePan:)];
+        UIPinchGestureRecognizer *imagePinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePinch:)];
+        UIRotationGestureRecognizer *imageRotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(onImageRotation:)];
+        
+        imagePinch.delegate = self;
+        
+        [self.tempImageView addGestureRecognizer:imagePan];
+        [self.tempImageView addGestureRecognizer:imagePinch];
+        [self.tempImageView addGestureRecognizer:imageRotate];
+        [self.view addSubview:self.tempImageView];
+        
+        
+    } else if(sender.state == UIGestureRecognizerStateChanged) {
+        
+        // move image to touch location
+        self.tempImageView.center = CGPointMake(touchPosition.x, touchPosition.y);
+        
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // remove image if not above tray area
+        if(touchPosition.y > self.view.frame.size.height - self.trayContainerView.frame.size.height) {
+            [self.tempImageView removeFromSuperview];
+        }
+        
+    }
+    
 }
 
 - (IBAction)onSpotify:(UIPanGestureRecognizer *)sender {
+    
+    // get touch location
+    CGPoint touchPosition = [sender locationInView:self.view];
+    
+    if(sender.state == UIGestureRecognizerStateBegan) {
+        
+        // create copy of image
+        float posY = self.trayContainerView.frame.origin.y + self.trayView.frame.origin.y + self.spotifyImageView.frame.origin.y;
+        CGRect frame = CGRectMake(self.spotifyImageView.frame.origin.x, posY, 44, 44);
+        self.tempImageView = [[UIImageView alloc] initWithFrame:frame];
+        self.tempImageView.image = self.spotifyImageView.image;
+        self.tempImageView.userInteractionEnabled = YES;
+        
+        // add gestures
+        UIPanGestureRecognizer *imagePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePan:)];
+        UIPinchGestureRecognizer *imagePinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onImagePinch:)];
+        UIRotationGestureRecognizer *imageRotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(onImageRotation:)];
+        
+        imagePinch.delegate = self;
+        
+        [self.tempImageView addGestureRecognizer:imagePan];
+        [self.tempImageView addGestureRecognizer:imagePinch];
+        [self.tempImageView addGestureRecognizer:imageRotate];
+        [self.view addSubview:self.tempImageView];
+        
+        
+    } else if(sender.state == UIGestureRecognizerStateChanged) {
+        
+        // move image to touch location
+        self.tempImageView.center = CGPointMake(touchPosition.x, touchPosition.y);
+        
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // remove image if not above tray area
+        if(touchPosition.y > self.view.frame.size.height - self.trayContainerView.frame.size.height) {
+            [self.tempImageView removeFromSuperview];
+        }
+        
+    }
+    
 }
 
 - (IBAction)onTwitter:(UIPanGestureRecognizer *)sender {
@@ -175,14 +298,7 @@ float lastVal;
     // get touch location
     CGPoint touchPosition = [sender locationInView:self.view];
     
-    //NSLog(@"%f",touchPosition.y);
-    
-    
     if(sender.state == UIGestureRecognizerStateBegan) {
-        
-        //NSLog(@"twitter begin");
-        //lastVal = touchPosition.y;
-        //NSLog(@"lastVal: %f",lastVal);
         
         // create copy of image
         float posY = self.trayContainerView.frame.origin.y + self.trayView.frame.origin.y + self.twitterImageView.frame.origin.y;
@@ -213,7 +329,9 @@ float lastVal;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         // remove image if not above tray area
-
+        if(touchPosition.y > self.view.frame.size.height - self.trayContainerView.frame.size.height) {
+            [self.tempImageView removeFromSuperview];
+        }
         
     }
     
